@@ -16,7 +16,8 @@ public class CategoryDAOTest {
 	static CategoryDAO categoryDAO;
 
 	@BeforeClass
-	public static void initialize() {
+	public static void initialize() 
+	{
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 		context.scan("com.niit");
 		context.refresh();
@@ -24,15 +25,13 @@ public class CategoryDAOTest {
 	}
 
 	@Ignore          //for ignoring particular test case
-	@Test             //used to specify each test
-	public void addCategoryTest() {
+	@Test             //used to specify each test case
+	public void addCategoryTest() 
+	{
 		Category category = new Category();
 		category.setCategoryName("Oppo mobile");
 		category.setCategoryDesc("All Oppo smart mobile");
-		assertTrue("Problem in adding category:", categoryDAO.addCategory(category));// will return true if expected
-																						// output returns true and
-																						// returns false if output is
-																						// false
+		assertTrue("Problem in adding category:", categoryDAO.addCategory(category));// will return true if expected output returns true and returns false if output is false
 	}
 
 	@Ignore

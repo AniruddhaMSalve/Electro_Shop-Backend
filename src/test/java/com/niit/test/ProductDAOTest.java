@@ -24,7 +24,7 @@ public class ProductDAOTest
 		productDAO = (ProductDAO) context.getBean("productDAO");
 	}
 
-	//@Ignore         
+	@Ignore         
 	@Test           
 	public void addProductTest() 
 	{
@@ -51,7 +51,7 @@ public class ProductDAOTest
 	@Test
 	public void deleteProductTest() 
 	{
-		Product product = productDAO.getProduct(11);
+		Product product = productDAO.getProduct(513);
 		product.setProductDesc("All Lenovo mobile with smart features");
 		assertTrue("Problem in deleting category:", productDAO.deleteProduct(product));
 	}

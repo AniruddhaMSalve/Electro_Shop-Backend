@@ -30,7 +30,7 @@ public class UserDAOTest
 	
 	@Ignore
 	@Test
-	public void registerUserTest()
+	public void addUserTest()
 	{
 		User user = new User();
 		user.setUsername("ani");
@@ -39,14 +39,13 @@ public class UserDAOTest
 		user.setEmailId("anisalve39@outlook.com");
 		user.setMobileNo("9773616437");
 		user.setEnabled(true);
-		user.setRole("Premium User");
-//ERROR IN NEXT LINE
-		assertTrue("Problem in registering user",userDAO.addUser(user));//condition is false, it should be true!!!
+		user.setRole("ROLE_USER");
+		assertTrue("Problem in registering user",userDAO.addUser(user));
 	}
 	
 	@Ignore
 	@Test
-	public void modifyUserTest()
+	public void editUserTest()
 	{
 		User user = new User();
 		user = userDAO.getUser(1);
@@ -60,7 +59,7 @@ public class UserDAOTest
 	public void deleteUserTest()
 	{
 		User user=new User();
-		user=userDAO.getUser(1);
+		user=userDAO.getUser(514);
 		assertTrue("Problem in deleting user",userDAO.deleteUser(user));
 	}
 	
@@ -69,12 +68,12 @@ public class UserDAOTest
 	public void singleUsersTest() 
 	{
 		User singleUser=new User();
-		singleUser=userDAO.getUser(81);
+		singleUser=userDAO.getUser(501);
 		assertNotNull("Problem in listing users:", singleUser);
 		System.out.println(singleUser.getCustomerName() + ": "+singleUser.getUsername()+": "+singleUser.getPassword()+": "+singleUser.getEmailId()+": "+singleUser.getMobileNo()+": "+singleUser.getRole()+": "+singleUser.getEnabled());
 	}
 	
-	//@Ignore
+//	@Ignore
 	@Test
 	public void listUsersTest() 
 	{
@@ -82,7 +81,7 @@ public class UserDAOTest
 		assertNotNull("Problem in listing users:", listUser);
 		for (User user : listUser) 
 		{
-			System.out.println(user.getCustomerName() + ": "+user.getUsername()+": "+user.getPassword()+": "+user.getEmailId()+": "+user.getMobileNo()+": "+user.getRole()+": "+user.getEnabled());
+			System.out.println(user.getUserId() + ": "+user.getCustomerName() + ": "+user.getUsername()+": "+user.getPassword()+": "+user.getEmailId()+": "+user.getMobileNo()+": "+user.getRole()+": "+user.getEnabled());
 		}
 	}
 }

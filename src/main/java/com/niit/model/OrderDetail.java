@@ -48,6 +48,5 @@ public class OrderDetail
 	}
 	public void setPmode(String pmode) {
 		this.pmode = pmode;
-	}
-	
+	}	
 }

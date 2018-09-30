@@ -19,5 +19,6 @@ public class CategoryDAOManualTest //to test CategoryDao addCategory method
 		category.setCategoryDesc("All Asus samrt phones");
 		categoryDAO.addCategory(category);
 		System.out.println("Categroy Inserted");
+		context.close();
 	}
 }

@@ -43,7 +43,7 @@ public class CartDAOTest
 	@Test
 	public void retreiveCartItemTest()
 	{
-		List<CartItem> listCartItems=cartDAO.retrieveCartItems("akto");
+		List<CartItem> listCartItems=cartDAO.retrieveCartItems("User1");
 		
 		assertTrue("Problem in retreiving Cart Items:",listCartItems.size()>0);
 		
