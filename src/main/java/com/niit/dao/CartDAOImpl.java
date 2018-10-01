@@ -73,6 +73,17 @@ public class CartDAOImpl implements CartDAO
 		session.close();
 		return listCartItem;
 	}
+	
+	@Override
+	public List<CartItem> retrieveCartItemsPaid(String username) 
+	{
+		Session session=sessionFactory.openSession();
+		Query query=session.createQuery("from CartItem where username=:username and pstatus='P'");
+		query.setParameter("username",username);
+		List<CartItem> listCartItem=query.list();
+		session.close();
+		return listCartItem;
+	}
 
 	@Override
 	public CartItem getCartItem(int cartItemId) 
