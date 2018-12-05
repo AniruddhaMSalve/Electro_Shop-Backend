@@ -19,7 +19,6 @@
     <spring.version>5.0.2.RELEASE</spring.version>
     <spring.security.version>4.2.2.RELEASE</spring.security.version>
     <hibernate.version>5.2.12.Final</hibernate.version>
-	<spring.security.version>4.2.2RELEASE</spring.security.version>
   </properties>
 
   <dependencies>
